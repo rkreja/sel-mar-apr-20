@@ -4,12 +4,27 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTests {
+	
+	private WebDriver driver;
+	
+	
+	@BeforeMethod
+	public void setupDriver() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
+	
 	
 
 	//TC1
@@ -17,12 +32,13 @@ public class LoginTests {
 	@Test
 	public void Login_with_invalid_userid() {
 		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		
 		//Go to http://www.automationpractice.com
 		driver.get("http://www.automationpractice.com");
+		
+		driver.findElement(By.className("login")).click();
+		
 		
 		
 		
@@ -41,16 +57,14 @@ public class LoginTests {
 		
 		//Verify error message displayed 'Password is required.'
 		
-		
 	}
 	
 	//TC2
 	
 	@Test
 	public void Login_with_valid_userid_but_invalid_password() {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+	
 //		Go to http://www.automationpractice.com
 		driver.get("http://www.automationpractice.com");
 		
