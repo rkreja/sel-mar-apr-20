@@ -1,11 +1,12 @@
-package com.automationpractice.product;
+package com.demo.inheritacne;
 
 import org.testng.annotations.Test;
 
 import com.automationpractice.core.TestBase;
 
-public class ProductTests extends TestBase{
+public class DemoLogin extends TestBase{
 
+	
 	
 	@Test
 	public void testone() {
@@ -22,4 +23,5 @@ public class ProductTests extends TestBase{
 	public void testthree() {
 		System.out.println("---");
 	}
+
 }

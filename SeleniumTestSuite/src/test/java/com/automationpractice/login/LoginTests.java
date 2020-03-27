@@ -1,30 +1,16 @@
 package com.automationpractice.login;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.automationpractice.core.TestBase;
 
-public class LoginTests {
-	
-	private WebDriver driver;
-	
-	
-	@BeforeMethod
-	public void setupDriver() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	}
-	
-	
+
+
+
+
+
+public class LoginTests extends TestBase{
 	
 
 	//TC1
@@ -32,7 +18,7 @@ public class LoginTests {
 	@Test
 	public void Login_with_invalid_userid() {
 		
-
+		
 		
 		//Go to http://www.automationpractice.com
 		driver.get("http://www.automationpractice.com");

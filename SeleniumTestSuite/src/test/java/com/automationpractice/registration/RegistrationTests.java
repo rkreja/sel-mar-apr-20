@@ -1,24 +1,17 @@
 package com.automationpractice.registration;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.automationpractice.core.TestBase;
 
-public class RegistrationTests {
+public class RegistrationTests extends TestBase{
 	
 	
 	@Test
 	public void Register_a_new_account_with_missing_required_fields() {
-		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		
 		
 		

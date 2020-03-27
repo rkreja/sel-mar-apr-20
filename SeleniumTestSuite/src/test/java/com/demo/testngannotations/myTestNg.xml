@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="test suite">
+	<test name="test sets">
+		<packages>
+			<package name="com.demo.testngannotations"></package>
+		</packages>
+	</test>
+</suite>

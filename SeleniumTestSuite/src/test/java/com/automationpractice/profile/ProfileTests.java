@@ -1,10 +1,12 @@
 package com.automationpractice.profile;
 
-public class ProfileTests {
+import com.automationpractice.core.TestBase;
+
+public class ProfileTests extends TestBase{
 
 	public void Update_name_in_User_Profile() {
 //		Go to http://www.automationpractice.com
-		
+
 //			Click Sign in button from top right corner of the page
 		
 //			Enter valid email address 'abc213@mailinator.com' in email address text field of right side
