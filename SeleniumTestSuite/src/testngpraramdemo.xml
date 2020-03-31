@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="product test suite">
+
+	<test name="all product test">
+		<parameter name="itemname1" value="Faded Short Sleeve T-shirts"></parameter>
+		<parameter name="itemname1price" value="$16.51"></parameter>
+		<parameter name="itemname2" value="Blouse"></parameter>
+		<parameter name="itemname1price" value="$27.00"></parameter>
+		<parameter name="itemname3" value="Printed Dress"></parameter>
+		<parameter name="itemname1price" value="$26.00"></parameter>
+		<classes>
+		
+		<class name="com.demo.TestNgParameterDemo"></class>
+		</classes>
+		
+	</test>
+
+
+</suite>

@@ -53,7 +53,7 @@ public class RegistrationTests extends TestBase{
 		
 //			lastname is required.
 		
-		errMsg = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/ol/li[2]")).getText();
+		errMsg = driver.findElement(By.xpath("//li[child::b[text()='lastname']]")).getText();
 		Assert.assertEquals(errMsg, "lastname is required.");
 		
 		
