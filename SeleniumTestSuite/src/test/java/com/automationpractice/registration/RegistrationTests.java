@@ -1,5 +1,7 @@
 package com.automationpractice.registration;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,9 +12,29 @@ public class RegistrationTests extends TestBase{
 	
 	
 	@Test
-	public void Register_a_new_account_with_missing_required_fields() {
-
+	public void randomTextGenerator() {
 		
+		int randomNumber = ThreadLocalRandom.current().nextInt(100, 999);
+		
+		String fname, lname, email;
+		
+		fname="Jhon";
+		lname="Smith";
+		email="mynewemail"+randomNumber+"@mailinator.com";
+		
+		
+		System.out.println("Registering an account with firstname: "+ fname);
+		System.out.println("Registering an account with lasttname: "+ lname);
+		System.out.println("Registering an account with email: "+ email);
+	}
+	
+	
+	@Test
+	public void Register_a_new_account_with_missing_required_fields() {
+		
+		
+
+		String emailAddress = "mynewemail1@mailinator.com";
 		
 		
 //		Go to http://www.automationpractice.com
@@ -32,7 +54,7 @@ public class RegistrationTests extends TestBase{
 		
 		
 //			Enter an email address 'xyz915@mailinator.com' in order to register into the text field
-		driver.findElement(By.id("email_create")).sendKeys("xyz915@mailinator.com");
+		driver.findElement(By.id("email_create")).sendKeys(emailAddress);
 		
 		
 //			Click on 'Create New Account' button
