@@ -1,14 +1,34 @@
 package students.assignments.marina;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automationpractice.core.TestBase;
 
 public class ProductTests extends TestBase{
+	
+	//"//a[@class='open-comment-form'and contains(text(),'Write a review')]"
+	private void myCustomWait(WebDriver driver, String xpath) {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebElement found = null;
+		int retry=0;
+		while(found==null && retry <=5) {
+			driver.navigate().refresh();
+			found = wait.ignoring(NoSuchElementException.class).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+			retry++;
+		}
+		
+	}
+	
+
+	
 	
 	@Test
 
@@ -49,7 +69,7 @@ public class ProductTests extends TestBase{
 	//Click OK
 	driver.findElement(By.xpath("//span[text()='OK' and parent::button[@type='submit']]")).click();
 	//Verify 'write a review' button gets appeared after few seconds
-	// Is it supposed be Disappeared? How do I verify?                             
+	                         
 
 	}
 	
