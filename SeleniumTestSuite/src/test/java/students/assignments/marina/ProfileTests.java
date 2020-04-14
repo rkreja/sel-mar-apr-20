@@ -23,6 +23,8 @@ public class ProfileTests {
 		// Go to http://www.automationpractice.com
 		driver.get("http://www.automationpractice.com");
 
+		
+		
 
 		// Click Sign in button from top right corner of the page
 		driver.findElement(By.xpath("//a[@class='login']")).click();
