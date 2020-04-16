@@ -1,10 +1,12 @@
 package students.assignments.marina;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,6 +15,90 @@ import org.testng.annotations.Test;
 import com.automationpractice.core.TestBase;
 
 public class ProductTests extends TestBase{
+	
+	
+	
+	@Test
+
+	public void Create_and_delete_Wish_List() {
+
+
+	// Training Keyword switch to alert; Date; Alert;
+
+	// Go to http://www.automationpractice.com
+	driver.get("http://www.automationpractice.com");
+
+
+	// Click Sign in button from top right corner of the page
+	driver.findElement(By.xpath("//a[@class='login']")).click();
+
+	// Enter valid email address 'hellow@mailinator.com' in email address text field of right side
+	driver.findElement(By.xpath("//input[@id='email']")).sendKeys("hellow@mailinator.com");
+
+	// Enter valid password 'hellow' in password text field
+	driver.findElement(By.xpath("//input[@id='passwd']")).sendKeys("hellow");
+
+	// Click 'Sign in' button
+	driver.findElement(By.xpath("//button[@id='SubmitLogin']")).click();
+
+	// Click MY WISH LISTS button
+	driver.findElement(By.xpath("//li[contains(@class,'lnk_wishlist') and child::a[@title='My wishlists']]")).click();
+
+	// Enter 'My Winter Shopping' in name test field
+	driver.findElement(By.xpath("//input[@id='name' and @type='text']")).sendKeys("My Winter Shopping");
+
+	// Click Save button
+	driver.findElement(By.xpath("//button[@id='submitWishlist']")).click();
+
+
+	//Step 9 Verify new wish list created with name = 'My Winter Shopping', Qty=0, Viewed=0, Created=today's date, Direct Link = View
+
+	String name = driver.findElement(By.xpath("//tr[1]/td[1]")).getText();
+	String qty = driver.findElement(By.xpath("//tr[1]/td[2]")).getText();
+	String viewed = driver.findElement(By.xpath("//tr[1]/td[3]")).getText();
+	//String created = driver.findElement(By.xpath("//tr[1]/td[4]")).getText();
+	String directlink = driver.findElement(By.xpath("//tr[1]/td[5]")).getText();
+
+	Assert.assertEquals(name, "My Winter Shopping");
+	Assert.assertEquals(qty, "0");
+	Assert.assertEquals(viewed, "0");
+	//Assert.assertEquals(created, "");
+	Assert.assertEquals(directlink, "View");
+
+	WebDriverWait driverWait = new WebDriverWait(driver, 10);
+	 boolean isPresent = driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[1]/td[1]")))!=null;
+	 System.out.println(isPresent + " yes element is visible" );
+
+	// Delete the created wish list item
+	 driver.findElement(By.xpath("//i[contains(@class,'icon-remove')]")).click();
+	 
+	 
+	// Click OK from the alert popup
+	 
+	 Alert alert =driver.switchTo().alert();
+	 alert.accept();
+
+	//Step 12 Verify wishlist item is removed
+	 
+//	 WebElement e = driver.findElement(By.xpath("//tr[1]/td[1]"));
+	 driverWait = new WebDriverWait(driver, 10);
+	 isPresent = driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//tr[1]/td[1]")));
+	 System.out.println(isPresent + "  element is now NOT visible" );
+	 
+	 Assert.assertEquals(isPresent, true);
+//	 
+//	 if(!e.isDisplayed()) {
+//	 System.out.println("WishList item is removed");
+//	 }else {
+//	 System.out.println("Wishlist item is still there");
+//	 }
+
+
+
+	}
+	
+	
+	
 	
 	//"//a[@class='open-comment-form'and contains(text(),'Write a review')]"
 	private void myCustomWait(WebDriver driver, String xpath) {
