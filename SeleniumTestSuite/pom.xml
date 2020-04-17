@@ -7,7 +7,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-
+	<dependency>
+		<groupId>net.timeandtraining</groupId>
+		<artifactId>TimeAndTrainingTestFramework</artifactId>
+		<version>1.2</version>
+		<scope>system</scope>
+		<systemPath>${basedir}/lib/TimeAndTrainingTestFramework-1.2.jar</systemPath>
+	</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
