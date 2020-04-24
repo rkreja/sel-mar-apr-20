@@ -11,7 +11,7 @@ import com.automationpractice.core.TestBase;
 
 import net.timentraining.core.util.TestUtility;
 
-public class HtnlTableDemo extends TestBase{
+public class HtmlTableDemo extends TestBase{
 	
 	
 	@Test
