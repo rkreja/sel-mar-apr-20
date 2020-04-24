@@ -52,8 +52,8 @@ public class HtnlTableDemo extends TestBase{
 		}
 		
 		String date_purchased = table.findElement(By.xpath(".//tbody/tr[1]/td[2]")).getText();
-//		System.out.println(date_puchsed);
-		Assert.assertEquals(date_purchased, TestUtility.getTodaysDate());
+		System.out.println(TestUtility.getTodaysDate("EST"));
+		Assert.assertEquals(date_purchased, TestUtility.getTodaysDate("EST"));
 		
 	}
 	
