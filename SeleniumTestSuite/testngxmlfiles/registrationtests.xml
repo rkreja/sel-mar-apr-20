@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Registration tests">
+
+
+  <test name="Registration tests with chrome browser">
+    <classes>
+      <class name="net.automation.registration.RegistrationTests"/>
+    </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->
