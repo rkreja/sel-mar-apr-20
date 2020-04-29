@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke test suite">
+
+
+  <test name="test major functionalities">
+   
+<classes>
+<class name="net.automation.login.LoginTests">
+<methods>
+<include name="login_with_valid_userid_and_Invalid_pwd"></include>
+</methods>
+</class>
+</classes>
+   
+   
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->

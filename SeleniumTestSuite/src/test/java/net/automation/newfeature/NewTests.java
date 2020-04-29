@@ -15,7 +15,7 @@ public class NewTests extends TestBase {
 		webui.launch("http://www.automationpractice.com");
 	}
 	
-	@Test
+	@Test(groups = {"smoke"})
 	public void newTest3() {
 		webui.launch("http://www.automationpractice.com");
 	}

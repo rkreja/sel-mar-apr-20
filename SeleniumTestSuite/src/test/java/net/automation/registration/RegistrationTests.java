@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import net.timentraining.core.TestBase;
 
 public class RegistrationTests extends TestBase {
-	@Test
+	@Test(groups = {"smoke"})
 	public void register_with_required_fields_only() {
 		webui.launch("http://www.automationpractice.com");
 	}

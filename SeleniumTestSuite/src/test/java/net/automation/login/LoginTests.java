@@ -17,7 +17,7 @@ public class LoginTests extends TestBase{
 		webui.launch("http://www.automationpractice.com");
 	}
 	
-	@Test
+	@Test(groups = {"smoke"})
 	public void login_with_valid_userid_and_Invalid_pwd() {
 		webui.launch("http://www.automationpractice.com");
 	}
